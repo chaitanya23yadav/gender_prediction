@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-momo">
+    <h1 class="text-5xl font-bold text-center mt-5 mb-8">Gender Prediction Model</h1>
+    <form action='/predict' method="POST">
+        <div class="flex flex-col items-center">
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="1"><b>Long Hair</b></label>
+                <br>
+                <select name="long_hair" id="1" required class="rounded-lg border-2 p-1 border-[#6a6a6a]">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+
+                <label for="2"><b>Forehead Width (cm)</b></label>
+                <br>
+                <input id="2" name="forehead_width_cm" type="number" required class="rounded-lg border-2 p-1 border-[#6a6a6a] w-1/3">
+
+            </div>
+
+            <div class="flex  items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="3"><b>Forehead Height (cm)</b></label>
+                <br>
+                <input name="hypertforehead_height_cm" id="3" type="number" class="rounded-lg border-2 p-1 border-[#6a6a6a] w-1/3">
+            </div>
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="5"><b>Is nose wide</b></label>
+                <br>
+                <select name="nose_wide" id="5" class="rounded-lg border-2 p-1 border-[#6a6a6a]">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="6"><b>Is nose Long</b></label>
+                <br>
+                <select name="nose_long" id="6" class="rounded-lg border-2 p-1 border-[#6a6a6a]">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="7"><b>Is lips thin</b></label>
+                <br>
+                <select name="lips_thin" id="7" class="rounded-lg border-2 p-1 border-[#6a6a6a]">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="flex items-center mt-3 mb-3 bg-[#F0F0F0] h-12 p-5 w-[25rem] rounded-lg justify-between">
+                <label for="8"><b>Is distance from nose to lip long</b></label>
+                <br>
+                <select name="distance_nose_to_lip_long" id="8" class="rounded-lg border-2 p-1 border-[#6a6a6a]">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="flex flex-col items-center mt-4">
+        <h4 class="text-center text-3xl font-bold"><b>{{pred}}</b></h4>
+        </div>
+
+        <div class="flex flex-col items-center mt-10">
+            <button class="bg-black text-white rounded-lg p-2" type="submit">Predict Probability</button>
+        </div>
+    </form>
+    
+</body>
+</html>
